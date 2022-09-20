@@ -8,80 +8,157 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="color-options">
+    <div class="canvas-wrap">
+      <h1>My Palette</h1>
+      <canvas></canvas>
+    </div>
+    <div class="color-wrap">
       <input id="color" type="color" />
-      <div
-        class="color-option"
-        style="background-color: #ff3838"
-        data-color="#ff3838"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #ffb8b8"
-        data-color="#ffb8b8"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #ff9f1a"
-        data-color="#ff9f1a"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #fff200"
-        data-color="#fff200"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #32ff7e"
-        data-color="#32ff7e"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #7efff5"
-        data-color="#7efff5"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #18dcff"
-        data-color="#18dcff"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #7d5fff"
-        data-color="#7d5fff"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #c56cf0"
-        data-color="#c56cf0"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #000"
-        data-color="#000"
-      ></div>
+      <ul>
+        <li>
+          <div
+            class="color-option"
+            style="background-color: #ff3838"
+            data-color="#ff3838"
+          ></div>
+        </li>
+        <li>
+          <div
+            class="color-option"
+            style="background-color: #ffb8b8"
+            data-color="#ffb8b8"
+          ></div>
+        </li>
+        <li>
+          <div
+            class="color-option"
+            style="background-color: #ff9f1a"
+            data-color="#ff9f1a"
+          ></div>
+        </li>
+        <li>
+          <div
+            class="color-option"
+            style="background-color: #fff200"
+            data-color="#fff200"
+          ></div>
+        </li>
+        <li>
+          <div
+            class="color-option"
+            style="background-color: #32ff7e"
+            data-color="#32ff7e"
+          ></div>
+        </li>
+        <li>
+          <div
+            class="color-option"
+            style="background-color: #7efff5"
+            data-color="#7efff5"
+          ></div>
+        </li>
+        <li>
+          <div
+            class="color-option"
+            style="background-color: #18dcff"
+            data-color="#18dcff"
+          ></div>
+        </li>
+        <li>
+          <div
+            class="color-option"
+            style="background-color: #7d5fff"
+            data-color="#7d5fff"
+          ></div>
+        </li>
+        <li>
+          <div
+            class="color-option"
+            style="background-color: #c56cf0"
+            data-color="#c56cf0"
+          ></div>
+        </li>
+        <li>
+          <div
+            class="color-option"
+            style="background-color: #000"
+            data-color="#000"
+          ></div>
+        </li>
+      </ul>
     </div>
 
-    <canvas></canvas>
-
-    <div class="btns">
-      <input
-        id="line-width"
-        type="range"
-        min="1"
-        max="10"
-        value="5"
-        step="0.1"
-      />
-      <button id="mode-btn">🩸 Filling Mode</button>
-      <button id="destroy-btn">💣 Destroy</button>
-      <button id="eraser-btn">❌ Erase</button>
-      <label for="file">
-        🖼️ Add Photo
-        <input id="file" type="file" accept="image/*" />
-      </label>
-      <input id="text" type="text" placeholder="Add text here... :)" />
-      <button id="save-btn">📥 Save image</button>
+    <div class="btn-wrap">
+      <dl>
+        <dt>Draw</dt>
+        <dd>
+          <div class="width-wrap">
+            <span id="line-width-text">5</span>
+            <input
+              id="line-width"
+              type="range"
+              min="1"
+              max="9"
+              value="5"
+              step="1"
+            />
+          </div>
+          <div class="mode-btns">
+            <button id="draw-btn">🖌️</button>
+            <button id="fill-btn">🩸</button>
+          </div>
+          <button id="eraser-btn">❌ Erase</button>
+        </dd>
+      </dl>
+      <dl>
+        <dt>Text</dt>
+        <dd>
+          <ul>
+            <li>
+              <select id="font-family">
+                <option value="Noto Sans KR">Noto Sans</option>
+                <option value="Noto Serif KR">Noto Serif</option>
+                <option value="Nanum Pen Script">Nanum Pen</option>
+                <option value="Hi Melody">Hi Melody</option>
+              </select>
+            </li>
+            <li>
+              <input
+                id="font-size"
+                type="number"
+                placeholder="font size"
+                value="48"
+              />
+            </li>
+            <li>
+              <select id="font-weight">
+                <option value="400">normal</option>
+                <option value="700">bold</option>
+              </select>
+            </li>
+          </ul>
+          <input
+            id="text"
+            type="text"
+            placeholder="Add text and double click... :)"
+          />
+        </dd>
+      </dl>
+      <dl>
+        <dt>Image</dt>
+        <dd>
+          <label for="file">
+            🖼️ Add Photo
+            <input id="file" type="file" accept="image/*" />
+          </label>
+        </dd>
+      </dl>
+      <dl>
+        <dd>
+          <button id="destroy-btn">💣 Destroy</button>
+          <button id="save-btn">📥 Save image</button>
+        </dd>
+      </dl>
     </div>
 
     <script src="app.js"></script>
